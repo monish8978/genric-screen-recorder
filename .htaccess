@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Frontend Routes
+RewriteRule ^login/?$ index.php [L]
+RewriteRule ^dashboard/?$ dashboard.php [L]
+RewriteRule ^logout/?$ dashboard.php?logout=true [L]
+
+# API Routes - Explicit
+RewriteRule ^api/([a-zA-Z0-9_-]+)/?$ api/$1.php [L]
+
+# Remove .php extension for frontend
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/.]+)/?$ $1.php [L]
