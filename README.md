@@ -164,7 +164,6 @@ Set the following in your environment or configuration file:
 // API Endpoints
 define('USER_API_URL', 'https://api.yoursite.com/users');
 define('CLIENT_API_URL', 'https://api.yoursite.com/clients');
-define('CLIENT_API_URL_ADD', 'https://api.yoursite.com/clients/add');
 define('CLIENT_API_URL_UPDATE', 'https://api.yoursite.com/clients/update');
 
 // Session Configuration
@@ -227,13 +226,6 @@ ini_set('display_errors', 1);
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Support
-
-For support and questions:
-- Create an issue in the GitHub repository
-- Contact: your-email@example.com
-- Documentation: [Wiki](https://github.com/your-username/dashboard-reports-system/wiki)
 
 ## Changelog
 
