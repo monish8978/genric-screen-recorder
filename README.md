@@ -49,8 +49,8 @@ A comprehensive web-based dashboard for managing and monitoring user and client 
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/dashboard-reports-system.git
-   cd dashboard-reports-system
+   git clone https://github.com/monish8978/genric-screen-recorder.git
+   cd genric-screen-recorder
    ```
 
 2. **Configure Environment**
