@@ -63,7 +63,6 @@ A comprehensive web-based dashboard for managing and monitoring user and client 
    ```php
    define('USER_API_URL', 'your-user-api-endpoint');
    define('CLIENT_API_URL', 'your-client-api-endpoint');
-   define('CLIENT_API_URL_ADD', 'your-add-client-api-endpoint');
    define('CLIENT_API_URL_UPDATE', 'your-update-client-api-endpoint');
    ```
 
