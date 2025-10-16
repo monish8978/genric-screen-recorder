@@ -222,10 +222,6 @@ ini_set('display_errors', 1);
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
 ## Changelog
 
   Version 1.0.0
