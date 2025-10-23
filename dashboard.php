@@ -639,10 +639,30 @@ if (!empty($logTime)) {
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
                                                         <div class="text-sm font-medium text-gray-900"><?php echo htmlspecialchars($item['macAddress'] ?? 'N/A'); ?></div>
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap">
-                                                        <div class="text-sm font-medium text-gray-900"><?php echo htmlspecialchars($item['CreationDate'] ?? 'N/A'); ?></div>
-                                                    </td>
+                                               <td class="px-6 py-4 whitespace-nowrap">
+    <div class="text-sm font-medium text-gray-900">
+        <?php 
+        $CreationDate = $item['CreationDate'] ?? '';
+
+        if (!empty($CreationDate)) {
+            try {
+                // Backend already in IST — no conversion needed
+                $date = new DateTime($CreationDate, new DateTimeZone('Asia/Kolkata'));
+
+                // Format: Oct 23, 2025 - 2:00 PM
+                echo htmlspecialchars($date->format('M j, Y - g:i A'));
+            } catch (Exception $e) {
+                echo htmlspecialchars($CreationDate);
+            }
+        } else {
+            echo 'N/A';
+        }
+        ?>
+    </div>
+</td>
+
+
+
                                                     <td class="px-6 py-4 whitespace-nowrap">
                                                         <?php
                                                         $isValid = filter_var($item['isValid'] ?? false, FILTER_VALIDATE_BOOLEAN);
