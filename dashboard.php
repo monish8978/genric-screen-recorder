@@ -592,19 +592,25 @@ function buildPaginationUrl($page, $activeTab, $filters) {
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
                                                         <div class="text-sm text-gray-900">
-                                                            <?php 
-                                                            $logTime = $item['logTime'] ?? '';
-                                                            if ($logTime) {
-                                                                try {
-                                                                    $date = new DateTime($logTime);
-                                                                    echo $date->format('M j, Y g:i A');
-                                                                } catch (Exception $e) {
-                                                                    echo htmlspecialchars($logTime);
-                                                                }
-                                                            } else {
-                                                                echo 'N/A';
-                                                            }
-                                                            ?>
+                                                           <?php 
+$logTime = $item['logTime'] ?? '';
+
+if (!empty($logTime)) {
+    try {
+        // Set timezone (India)
+        $date = new DateTime($logTime, new DateTimeZone('UTC')); // if original is UTC
+        $date->setTimezone(new DateTimeZone('Asia/Kolkata')); // convert to IST
+
+        // Format: Oct 23, 2025 - 12:45 PM
+        echo $date->format('M j, Y - g:i A');
+    } catch (Exception $e) {
+        echo htmlspecialchars($logTime);
+    }
+} else {
+    echo 'N/A';
+}
+?>
+
                                                         </div>
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
